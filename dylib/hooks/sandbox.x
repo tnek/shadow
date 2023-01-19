@@ -68,6 +68,9 @@ static kern_return_t replaced_host_get_special_port(host_priv_t host_priv, int n
     return original_host_get_special_port(host_priv, node, which, port);
 }
 
+// From https://opensource.apple.com/source/xnu/xnu-1228/osfmk/mach/task_special_ports.h
+#define TASK_SEATBELT_PORT 7
+
 static kern_return_t (*original_task_get_special_port)(task_inspect_t task, int which_port, mach_port_t *special_port);
 static kern_return_t replaced_task_get_special_port(task_inspect_t task, int which_port, mach_port_t *special_port) {
     NSLog(@"%@: %d", @"task_get_special_port", which_port);

@@ -34,11 +34,11 @@
 
 // HookKit overrides
 #ifdef hookkit_h
-#define MSHookFunction(a,b,c)   [hooks hookFunction:a withReplacement:b outOldPtr:c]
-#define MSHookMessageEx         HKHookMessage
-#define MSGetImageByName        HKOpenImage
-#define MSFindSymbol            HKFindSymbol
-#define MSCloseImage            HKCloseImage
+#define MSHookFunction(a, b, c) [hooks hookFunction:a withReplacement:b outOldPtr:c]
+#define MSHookMessageEx HKHookMessage
+#define MSGetImageByName HKOpenImage
+#define MSFindSymbol HKFindSymbol
+#define MSCloseImage HKCloseImage
 #endif
 
 // private symbols
@@ -66,6 +66,7 @@ extern void shadowhook_NSURL(HKSubstitutor* hooks);
 extern void shadowhook_objc(HKSubstitutor* hooks);
 extern void shadowhook_sandbox(HKSubstitutor* hooks);
 extern void shadowhook_syscall(HKSubstitutor* hooks);
+extern void shadowhook_sysctl(HKSubstitutor* hooks);
 extern void shadowhook_UIApplication(HKSubstitutor* hooks);
 extern void shadowhook_UIImage(HKSubstitutor* hooks);
 extern void shadowhook_libc_extra(HKSubstitutor* hooks);

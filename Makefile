@@ -1,6 +1,8 @@
-ARCHS = armv7 armv7s arm64 arm64e
-TARGET = iphone:clang:14.5:8.0
+ARCHS = arm64 arm64e
+TARGET=iphone:clang:14.5:14.5
 
+
+CFLAGS="-Wno-error"
 include $(THEOS)/makefiles/common.mk
 SUBPROJECTS += dylib
 SUBPROJECTS += preferencebundle
